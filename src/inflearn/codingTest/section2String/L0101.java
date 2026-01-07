@@ -21,7 +21,7 @@ import java.util.Scanner;
  * 예시 출력 1: 2
  */
 
-public class L01 {
+public class L0101 {
 	
 	public int solution(String str, char t) {
 		int answer = 0;
@@ -38,7 +38,7 @@ public class L01 {
 	}
 
 	public static void main(String[] args) {
-		L01 T = new L01();
+		L0101 T = new L0101();
 		Scanner kb = new Scanner(System.in);
 		String str = kb.next();
 		char c = kb.next().charAt(0);
