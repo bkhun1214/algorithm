@@ -71,6 +71,30 @@ public class L0211 {
 		return answer;
 	}
 	
+	// 강의
+	public static int answer(int n, int[][] arr) {
+		int answer = 0;
+		int max = Integer.MIN_VALUE;
+		
+		for (int i = 0; i < n; i++) {
+			int cnt = 0;
+			for (int j = 0; j < n; j++) {
+				for (int k=0; k<5; k++) {
+					if (arr[i][k] == arr[j][k]) {
+						cnt++;
+						break;
+					}
+				}
+			}
+			if (cnt > max) {
+				max = cnt;
+				answer = i;
+			}
+		}
+		
+		return answer;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
