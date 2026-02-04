@@ -58,6 +58,31 @@ public class L0401 {
 		return answer;
 	}
 
+	// 강의
+	/**
+	 * HashMap 중요한 메소드
+	 * map.getOrDefault(key, default)
+	 * map.containsKey(key)
+	 * map.size()
+	 * map.remove(key)
+	 * map.keySet()
+ 	 */
+	public char answer(int n, String s) {
+		char answer = ' ';
+		HashMap<Character, Integer> map = new HashMap<>();
+		for (char x : s.toCharArray()) {
+			map.put(x, map.getOrDefault(x, 0) + 1);
+		}
+		int max=Integer.MIN_VALUE;
+		for (char key : map.keySet()) {
+			if(map.get(key)>max) {
+				max=map.get(key);
+				answer=key;
+			}
+		}
+		return answer;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
