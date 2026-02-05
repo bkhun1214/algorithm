@@ -24,7 +24,7 @@ import java.util.*;
  * 4 3 2 1 5
  */
 
-public class L0208 {
+public class L0208_등수구하기 {
 	
 	public static String solution(int n, int[] arr) {
 		int[] rank = new int[n];
@@ -48,6 +48,29 @@ public class L0208 {
 		}
 		
 		return answer;
+	}
+	
+	public int[] answer(int n, int[] arr){
+		int[] answer = new int[n];
+		for(int i=0; i<n; i++){
+			int cnt=1;
+			for(int j=0; j<arr.length; j++){
+				if(arr[j]>arr[i]) cnt++;
+			}
+			answer[i]=cnt;
+		}
+		return answer;
+		/** public static void main(String[] args){
+		 *	Main T = new Main();
+		 *	Scanner kb = new Scanner(System.in);
+		 *	int n=kb.nextInt();
+		 *	int[] arr=new int[n];
+		 *	for(int i=0; i<n; i++){
+		 *		arr[i]=kb.nextInt();
+		 *	}
+		 *	for(int x :T.solution(n, arr)) System.out.print(x+" ");
+		 *}
+		 */
 	}
 	
 	public static void main(String[] args) {

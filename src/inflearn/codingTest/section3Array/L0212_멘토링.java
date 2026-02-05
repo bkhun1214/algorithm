@@ -31,7 +31,7 @@ import java.util.*;
  * 예시 출력 1
  * 3
  */
-public class L0212 {
+public class L0212_멘토링 {
 	
 	public static int solution(int N, int M, int[][] arr) {
 		int answer = 0;
@@ -74,34 +74,25 @@ public class L0212 {
 		return answer;
 	}
 	
-	// 강의
-	public static int answer(int n, int m, int[][] arr) {
-		int answer = 0;
-		
-		for (int i = 1; i <= n; i++) {
-			for (int j = 1; j <= n; j++) {
-				int cnt = 0;
-				for (int k=0; k < m; k++) {
-					int pi = 0;
-					int pj = 0;
-					for (int s=0; s < n; s++) {
-						if(arr[k][s] == i) {
-							pi = s;
-						}
-						if(arr[k][s] == j) {
-							pj = s;
-						}
+	public int answer(int n, int m, int[][] arr){
+		int answer=0;
+		for(int i=1; i<=n; i++){
+			for(int j=1; j<=n; j++){
+				int cnt=0;
+				for(int k=0; k<m; k++){
+					int pi=0, pj=0;
+					for(int s=0; s<n; s++){
+						if(arr[k][s]==i) pi=s;
+						if(arr[k][s]==j) pj=s;
 					}
-					if (pi < pj) {
-						cnt++;
-					}
+					if(pi<pj) cnt++;
 				}
-				if (cnt == m) {
+				if(cnt==m){
 					answer++;
+					//System.out.println(i+" "+j);
 				}
 			}
 		}
-		
 		return answer;
 	}
 	

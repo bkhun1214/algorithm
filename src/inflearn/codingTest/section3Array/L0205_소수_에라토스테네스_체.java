@@ -21,7 +21,7 @@ import java.util.*;
  * 예시 출력 1
  * 8
  */
-public class L0205 {
+public class L0205_소수_에라토스테네스_체 {
 
 	// 에라토스테네스
 	// n + 1 만큼 int[] 선언 및 0으로 채우기
@@ -45,6 +45,18 @@ public class L0205 {
 		}
 		
 		return answer;
+	}
+	
+	public int answer(int n){
+		int cnt=0;
+		int[] ch = new int[n+1];
+		for(int i=2; i<=n; i++){
+			if(ch[i]==0){
+				cnt++;
+				for(int j=i; j<=n; j=j+i) ch[j]=1;
+			}
+		}
+		return cnt;
 	}
 	
 	public static void main(String[] args) {

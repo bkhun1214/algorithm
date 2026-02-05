@@ -35,7 +35,7 @@ import java.util.*;
  * 예시 출력 1
  * 8
  */
-public class L0306 {
+public class L0306_최대_길이_연속부분수열 {
 	
 	public static int solution(int n, int k, int[] arr) {
 		int answer = 0;
@@ -68,12 +68,12 @@ public class L0306 {
 		return answer;
 	}
 	
-	// 강의: two pointers
-	public int answer(int n, int k, int[] arr) {
+	// two pointers
+	public int answer(int n, int k, int[] arr){
 		int answer=0, cnt=0, lt=0;
-		for(int rt=0; rt<n; rt++) {
+		for(int rt=0; rt<n; rt++){
 			if(arr[rt]==0) cnt++;
-			while(cnt>k) {
+			while(cnt>k){
 				if(arr[lt]==0) cnt--;
 				lt++;
 			}

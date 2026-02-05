@@ -19,9 +19,13 @@ import java.util.*;
  * 첫 줄에 가장 긴 단어를 출력한다. 가장 길이가 긴 단어가 여러개일 경우 문장속에서 가장 앞쪽에 위치한 단어를 답으로 합니다.
  * 
  * 
- * 예시 입력 1: it is time to study 예시 출력 1: study
+ * 예시 입력 1
+ * it is time to study 
+ * 
+ * 예시 출력 1
+ * study
  */
-public class L0103 {
+public class L0103_문장_속_단어 {
 	
 	public static String solution(String str) {
 		String answer = "";
@@ -33,6 +37,36 @@ public class L0103 {
 			}
 		}
 		
+		return answer;
+	}
+	
+	public String answer1(String str){
+		String answer="";
+		int m=Integer.MIN_VALUE;
+		String[] s = str.split(" ");
+		for(String x : s){
+			int len=x.length();
+			if(len>m){
+				m=len;
+				answer=x;
+			}
+		}
+		return answer;
+	}
+	
+	public String answer2(String str){
+		String answer="";
+		int m=Integer.MIN_VALUE, pos;
+		while((pos=str.indexOf(' '))!=-1){
+			String tmp=str.substring(0, pos);
+			int len=tmp.length();
+			if(len>m){
+				m=len;
+				answer=tmp;
+			}
+			str=str.substring(pos+1);
+		}
+		if(str.length()>m) answer=str;
 		return answer;
 	}
 

@@ -36,7 +36,7 @@ import java.util.*;
  * 10
  */
 
-public class L0207 {
+public class L0207_점수계산 {
 
 	public static int solution(int n, int[] arr) {
 		int answer = 0;
@@ -51,6 +51,18 @@ public class L0207 {
 			}
 		}
 		
+		return answer;
+	}
+	
+	public int answer(int n, int[] arr){
+		int answer=0, cnt=0;
+		for(int i=0; i<n; i++){
+			if(arr[i]==1){
+				cnt++;
+				answer+=cnt;
+			}
+			else cnt=0;
+		}	
 		return answer;
 	}
 	

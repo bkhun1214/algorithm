@@ -45,7 +45,7 @@ import java.util.*;
  * 예시 출력 1
  * COOL
  */
-public class L0112 {
+public class L0112_암호 {
 	
 	public static String solution(int n, String str) {
 		String answer = "";
@@ -69,16 +69,14 @@ public class L0112 {
 		return answer;
 	}
 	
-	// 강의 답지
-	public static String answer(int n, String str) {
-		String answer = "";
-		for (int i = 0; i < n; i++) {
-			String tmp = str.substring(0, 7).replace('#', '1').replace('*', '0');
-			int num = Integer.parseInt(tmp, 2);
-			answer += (char)num;
-			str = str.substring(7);
+	public String answer(int n, String s){
+		String answer="";
+		for(int i=0; i<n; i++){
+			String tmp=s.substring(0, 7).replace('#', '1').replace('*', '0');
+			int num=Integer.parseInt(tmp, 2);
+			answer+=(char)num;
+			s=s.substring(7);
 		}
-		
 		return answer;
 	}
 	

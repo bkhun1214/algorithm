@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 5
  */
 
-public class L0202 {
+public class L0202_보이는_학생 {
 
 	public static int solution(int n, int[] arr) {
 		int answer = 0;
@@ -36,6 +36,17 @@ public class L0202 {
 			}
 		}
 		
+		return answer;
+	}
+	
+	public int answer(int n, int[] arr){
+		int answer=1, max=arr[0];
+		for(int i=1; i<n; i++){
+			if(arr[i]>max){
+				max=arr[i];
+				answer++;
+			}
+		}
 		return answer;
 	}
 	

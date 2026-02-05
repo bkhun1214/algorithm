@@ -23,7 +23,7 @@ import java.util.*;
  * 예시 출력 1
  * YES
  */
-public class L0107 {
+public class L0107_회문_문자열 {
 	
 	public static String solution(String str) {
 		char[] c = str.toCharArray();
@@ -39,6 +39,23 @@ public class L0107 {
 		}
 		
 		return "YES";
+	}
+	
+	public String answer1(String str){
+		String answer="YES";
+		str=str.toUpperCase();
+		int len=str.length();
+		for(int i=0; i<len/2; i++){
+			if(str.charAt(i)!=str.charAt(len-i-1)) answer="NO";
+		}
+		return answer;
+	}
+	
+	public String answer2(String str){
+		String answer="NO";
+		String tmp=new StringBuilder(str).reverse().toString();
+		if(str.equalsIgnoreCase(tmp)) answer="YES";
+		return answer;
 	}
 	
 	public static void main(String[] args) {

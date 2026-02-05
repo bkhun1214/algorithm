@@ -23,7 +23,7 @@ import java.util.*;
  * 7 9 6 12
  */
 
-public class L0201 {
+public class L0201_큰_수_출력하기 {
 
 	public static String solution(int n, int[] arr) {
 		String answer = "";
@@ -41,6 +41,28 @@ public class L0201 {
 		}
 		
 		return answer;
+	}
+	
+	public ArrayList<Integer> answer(int n, int[] arr){
+		ArrayList<Integer> answer = new ArrayList<>();
+		answer.add(arr[0]);
+		for(int i=1; i<n; i++){
+			if(arr[i]>arr[i-1]) answer.add(arr[i]);
+		}
+		return answer;
+		/**public static void main(String[] args){
+		 *	Main T = new Main();
+		 *	Scanner kb = new Scanner(System.in);
+		 *	int n=kb.nextInt();
+		 *	int[] arr=new int[n];
+		 *	for(int i=0; i<n; i++){
+		 *		arr[i]=kb.nextInt();
+		 *	}
+		 *	for(int x : T.solution(n, arr)){
+		 *		System.out.print(x+" ");
+		 *	}
+		 *}
+		 */
 	}
 	
 	public static void main(String[] args) {

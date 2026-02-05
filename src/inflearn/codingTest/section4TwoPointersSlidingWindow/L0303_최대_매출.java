@@ -3,8 +3,9 @@ package inflearn.codingTest.section4TwoPointersSlidingWindow;
 import java.util.*;
 
 /**
- * 3. 최대 매출 설명
+ * 3. 최대 매출 
  * 
+ * 설명
  * 현수의 아빠는 제과점을 운영합니다. 
  * 현수 아빠는 현수에게 N일 동안의 매출기록을 주고 연속된 K일 동안의 최대 매출액이 얼마인지 구하라고 했습니다.
  * 
@@ -33,7 +34,7 @@ import java.util.*;
  * 예시 출력 1
  * 56
  */
-public class L0303 {
+public class L0303_최대_매출 {
 	
 	public static int solution(int n, int k, int[] arr) {
 		int answer = 0;
@@ -51,22 +52,15 @@ public class L0303 {
 		return answer;
 	}
 	
-	// 강의: Sliding window
-	public int answer(int n, int k, int[] arr) {
-		int answer=0, sum=0;
-		
-		for (int i=0; i<k; i++) {
-			sum += arr[i];
-		}
+	// Sliding window
+	public int answer(int n, int k, int[] arr){
+		int answer, sum=0;
+		for(int i=0; i<k; i++) sum+=arr[i];
 		answer=sum;
-		
-		for (int i=k; i<n; i++) {
-			sum += (arr[i]-arr[i-k]);
-			if (answer < sum) {
-				answer = sum;
-			}
+		for(int i=k; i<n; i++){
+			sum+=(arr[i]-arr[i-k]);
+			answer=Math.max(answer, sum);
 		}
-		
 		return answer;
 	}
 	
@@ -82,7 +76,7 @@ public class L0303 {
 			arr[i] = sc.nextInt();
 		}
 		
-		System.out.println(new L0303().answer(N, K, arr));
+		System.out.println(new L0303_최대_매출().answer(N, K, arr));
 	}
 
 }

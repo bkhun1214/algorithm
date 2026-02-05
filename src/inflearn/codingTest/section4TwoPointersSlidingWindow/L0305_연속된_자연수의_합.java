@@ -29,7 +29,7 @@ import java.util.*;
  * 예시 출력 1
  * 3
  */
-public class L0305 {
+public class L0305_연속된_자연수의_합 {
 	
 	public static int solution(int n) {
 		int answer = 0;
@@ -60,33 +60,33 @@ public class L0305 {
 		return answer;
 	}
 	
-	// 강의: two pointers
-	public int answer1(int n) {
-		int answer=0, sum=0, lt=0;
+	// two pointers
+	public int answer1(int n){
+		int answer=0, sum=0;
 		int m=n/2+1;
 		int[] arr=new int[m];
 		for(int i=0; i<m; i++) arr[i]=i+1;
-		for(int rt=0; rt<m; rt++) {
+		int lt=0;
+		for(int rt=0; rt<m; rt++){
 			sum+=arr[rt];
 			if(sum==n) answer++;
-			while(sum>=n) {
+			while(sum>=n){
 				sum-=arr[lt++];
-				if(sum==n) answer++;
+				if(sum==n) answer++; 
 			}
 		}
 		return answer;
 	}
 	
-	// 강의: 수학
-	public int answer2(int n) {
+	// 수학
+	public int answer2(int n){
 		int answer=0, cnt=1;
 		n--;
-		while(n>0) {
+		while(n>0){
 			cnt++;
-			n-=cnt;
-			if (n % cnt == 0) answer++;
+			n=n-cnt;
+			if(n%cnt==0) answer++;
 		}
-		
 		return answer;
 	}
 	

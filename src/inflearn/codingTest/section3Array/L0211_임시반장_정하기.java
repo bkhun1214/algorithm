@@ -42,7 +42,7 @@ import java.util.*;
  * 예시 출력 1
  * 4
  */
-public class L0211 {
+public class L0211_임시반장_정하기 {
 	
 	public static int solution(int N, int[][] arr) {
 		int answer = 0;
@@ -71,27 +71,23 @@ public class L0211 {
 		return answer;
 	}
 	
-	// 강의
-	public static int answer(int n, int[][] arr) {
-		int answer = 0;
-		int max = Integer.MIN_VALUE;
-		
-		for (int i = 0; i < n; i++) {
-			int cnt = 0;
-			for (int j = 0; j < n; j++) {
-				for (int k=0; k<5; k++) {
-					if (arr[i][k] == arr[j][k]) {
+	public int answer(int n, int[][] arr){
+		int answer=0, max=0;
+		for(int i=1; i<=n; i++){
+			int cnt=0;
+			for(int j=1; j<=n; j++){
+				for(int k=1; k<=5; k++){
+					if(arr[i][k]==arr[j][k]){
 						cnt++;
 						break;
 					}
 				}
 			}
-			if (cnt > max) {
-				max = cnt;
-				answer = i;
+			if(cnt>max){
+				max=cnt;
+				answer=i;
 			}
 		}
-		
 		return answer;
 	}
 	

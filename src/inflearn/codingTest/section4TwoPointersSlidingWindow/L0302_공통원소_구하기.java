@@ -3,8 +3,9 @@ package inflearn.codingTest.section4TwoPointersSlidingWindow;
 import java.util.*;
 
 /**
- * 2. 공통원소 구하기 설명
+ * 2. 공통원소 구하기 
  * 
+ * 설명
  * A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로그램을 작성하세요.
  * 
  * 
@@ -27,7 +28,7 @@ import java.util.*;
  * 예시 출력 1
  * 2 3 5
  */
-public class L0302 {
+public class L0302_공통원소_구하기 {
 	
 	public static String solution(int n, int m, int[] arr1, int[] arr2) {
 		StringBuffer answer = new StringBuffer();
@@ -84,24 +85,20 @@ public class L0302 {
 		return answer.toString();
 	}
 	
-	// 강의: two pointers algorithm
-	public List<Integer> answer(int n, int m, int[] a, int[] b) {
-		List<Integer> answer = new ArrayList<>();
+	// two pointers algorithm
+	public ArrayList<Integer> answer(int n, int m, int[] a, int[] b){
+		ArrayList<Integer> answer = new ArrayList<>();
 		Arrays.sort(a);
 		Arrays.sort(b);
 		int p1=0, p2=0;
-		
-		while (p1 < n && p2 < m) {
-			if (a[p1] == b[p2]) {
+		while(p1<n && p2<m){
+			if(a[p1]==b[p2]){
 				answer.add(a[p1++]);
 				p2++;
-			} else if (a[p1]<b[p2]){
-				p1++;
-			} else {
-				p2++;
 			}
+			else if(a[p1]<b[p2]) p1++;
+			else p2++;
 		}
-		
 		return answer;
 	}
 	

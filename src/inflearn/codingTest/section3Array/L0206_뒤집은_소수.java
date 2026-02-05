@@ -21,7 +21,7 @@ import java.util.*;
  * 예시 출력 1
  * 23 2 73 2 3
  */
-public class L0206 {
+public class L0206_뒤집은_소수 {
 
 	public static String solution(int n, int[] arr) {
 		String answer = "";
@@ -56,26 +56,32 @@ public class L0206 {
 		return answer;
 	}
 	
-	// 강의 내용
-	public ArrayList<Integer> answer(int n, int[] arr) {
+	public ArrayList<Integer> answer(int n, int[] arr){
 		ArrayList<Integer> answer = new ArrayList<>();
-		
-		for (int i = 0; i < n; i++) {
-			int tmp = arr[i];
-			int res = 0;
-			
-			while (tmp > 0) {
-				int t = tmp % 10;
-				res = res * 10 + t;
-				tmp = tmp / 10;
+		for(int i=0; i<n; i++){
+			int tmp=arr[i];
+			int res=0;
+			while(tmp>0){
+				int t=tmp%10;
+				res=res*10+t;
+				tmp=tmp/10;
 			}
-			
-			if (isPrime(res)) {
-				answer.add(res);
-			}
+			if(isPrime(res)) answer.add(res);
 		}
-		
 		return answer;
+		/** public static void main(String[] args){
+		 *	Main T = new Main();
+		 *	Scanner kb = new Scanner(System.in);
+		 *	int n=kb.nextInt();
+		 *	int[] arr=new int[n];
+		 *	for(int i=0; i<n; i++){
+		 *		arr[i]=kb.nextInt();
+		 *	}
+		 *	for(int x : T.solution(n, arr)){
+		 *		System.out.print(x+" ");
+		 *	}
+		 *}
+		 */
 	}
 	
 	public boolean isPrime(int num) {

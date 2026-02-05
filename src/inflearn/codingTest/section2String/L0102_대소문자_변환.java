@@ -18,12 +18,13 @@ import java.util.Scanner;
  * 첫 줄에 대문자는 소문자로, 소문자는 대문자로 변환된 문자열을 출력합니다.
  * 
  * 
- * 예시 입력 1: StuDY 
+ * 예시 입력 1 
+ * StuDY 
  * 
- * 예시 출력 1: sTUdy
- * 
+ * 예시 출력 1 
+ * sTUdy
  */
-public class L0102 {
+public class L0102_대소문자_변환 {
 	
 	public static String solution(String str) {
 		String answer = "";
@@ -36,6 +37,25 @@ public class L0102 {
 			}
 		}
 		
+		return answer;
+	}
+	
+	public String answer1(String str){
+		String answer="";
+		for(char x : str.toCharArray()){
+			if(Character.isLowerCase(x)) answer+=Character.toUpperCase(x);
+			else answer+=Character.toLowerCase(x);
+
+		}
+		return answer;
+	}
+	
+	public String answer2(String str){
+		String answer="";
+		for(char x : str.toCharArray()){
+			if(x>=97 && x<=122) answer+=(char)(x-32);
+			else answer+=(char)(x+32);
+		}
 		return answer;
 	}
 

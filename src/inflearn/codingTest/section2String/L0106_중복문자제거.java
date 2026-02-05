@@ -24,7 +24,7 @@ import java.util.*;
  * 예시 출력 1
  * kset
  */
-public class L0106 {
+public class L0106_중복문자제거 {
 	
 	public static String solution(String str) {
 		StringBuilder answer = new StringBuilder();
@@ -36,6 +36,15 @@ public class L0106 {
 		}
 		
 		return answer.toString();
+	}
+	
+	public String answer(String str){
+		String answer="";
+		for(int i=0; i<str.length(); i++){
+			//System.out.println(str.charAt(i)+" "+i+" "+str.indexOf(str.charAt(i)));
+			if(str.indexOf(str.charAt(i))==i) answer+=str.charAt(i);
+		}
+		return answer;
 	}
 	
 	public static void main(String[] args) {

@@ -13,7 +13,8 @@ import java.util.*;
  * 첫 번째 줄에 첫 번째 배열의 크기 N(1<=N<=100)이 주어집니다.
  * 두 번째 줄에 N개의 배열 원소가 오름차순으로 주어집니다.
  * 세 번째 줄에 두 번째 배열의 크기 M(1<=M<=100)이 주어집니다.
- * 네 번째 줄에 M개의 배열 원소가 오름차순으로 주어집니다.
+ * 네 번째 줄에 M개의 배열 원소ssw
+ * 순으로 주어집니다.
  * 각 리스트의 원소는 int형 변수의 크기를 넘지 않습니다.
  * 
  * 출력
@@ -28,7 +29,7 @@ import java.util.*;
  * 예시 출력 1
  * 1 2 3 3 5 6 7 9
  */
-public class L0301 {
+public class L0301_두_배열_합치기 {
 	
 	public static String solution(int n, int m, int[] arr1, int[] arr2) {
 		StringBuffer answer = new StringBuffer();
@@ -69,25 +70,16 @@ public class L0301 {
 		return answer.toString();
 	}
 	
-	// 강의: two pointers algorithm
-	public List<Integer> answer(int n, int m, int[] a, int[] b) {
-		List<Integer> answer = new ArrayList<>();
+	// two pointers algorithm
+	public ArrayList<Integer> answer(int n, int m, int[] a, int[] b){
+		ArrayList<Integer> answer = new ArrayList<>();
 		int p1=0, p2=0;
-		while (p1 < n && p2 < m) {
-			if (a[p1] < b[p2]) {
-				answer.add(a[p1++]);
-			} else {
-				answer.add(b[p2++]);
-			}
+		while(p1<n && p2<m){
+			if(a[p1]<b[p2]) answer.add(a[p1++]);
+			else answer.add(b[p2++]);
 		}
-		
-		while(p1<n) {
-			answer.add(a[p1++]);
-		}
-		while(p2<m) {
-			answer.add(b[p2++]);
-		}
-		
+		while(p1<n) answer.add(a[p1++]);
+		while(p2<m) answer.add(b[p2++]);
 		return answer;
 	}
 	

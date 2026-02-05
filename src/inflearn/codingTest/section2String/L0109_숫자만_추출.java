@@ -22,7 +22,7 @@ import java.util.*;
  * 예시 출력 1 
  * 208
  */
-public class L0109 {
+public class L0109_숫자만_추출 {
 
 	public static int solution(String str) {
 		StringBuilder sb = new StringBuilder();
@@ -34,7 +34,19 @@ public class L0109 {
 		}
 		
 		return Integer.parseInt(sb.toString());
-		
+	}
+	
+	public int answer(String s){
+		//int answer=0;
+		String answer="";
+		for(char x : s.toCharArray()){
+			//if(x>=48 && x<=57) answer=answer*10+(x-48);
+			/*if(Character.isDigit(x)){
+				answer=answer*10+ Character.getNumericValue(x);
+			}*/
+			if(Character.isDigit(x)) answer+=x;
+		}
+		return Integer.parseInt(answer);
 	}
 	
 	public static void main(String[] args) {

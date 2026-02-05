@@ -28,7 +28,7 @@ import java.util.*;
  * 예시 출력 2
  * KST3SE2KFK3DJ2G2
  */
-public class L0111 {
+public class L0111_문자열_압축 {
 	
 	public static String solution(String str) {
 		StringBuilder answer = new StringBuilder();
@@ -50,40 +50,40 @@ public class L0111 {
 				}
 			}
 			
-			if (i == str.length() - 1) {
-				if (temp == str.charAt(i)) {
-					answer.append(str.charAt(i));
-					answer.append(num);
-				} else {
-					answer.append(str.charAt(i));
-				}
-			}
+//			if (i == str.length() - 1) {
+//				if (temp == str.charAt(i)) {
+//					answer.append(str.charAt(i));
+//					answer.append(num);
+//				} else {
+//					answer.append(str.charAt(i));
+//				}
+//			}
 			
 			temp = str.charAt(i);
 		}
 		
+		if (num == 1) {
+			answer.append(temp);
+		} else {
+			answer.append(temp);
+			answer.append(num);
+		}
 		
 		return answer.toString();
 	}
 	
-	// 강의 답지
-	public static String answer(String str) {
-		String answer = "";
-		str = str + " ";
-		int cnt = 1;
-		
-		for (int i=0; i < str.length()-1; i++) {
-			if (str.charAt(i) == str.charAt(i+1)) {
-				cnt++;
-			} else {
-				answer += str.charAt(i);
-				if (cnt > 1) {
-					answer += cnt;
-					cnt = 1;
-				}
+	public String answer(String s){
+		String answer="";
+		s=s+" ";
+		int cnt=1;
+		for(int i=0; i<s.length()-1; i++){
+			if(s.charAt(i)==s.charAt(i+1)) cnt++;
+			else{
+				answer+=s.charAt(i);
+				if(cnt>1) answer+=String.valueOf(cnt);
+				cnt=1;
 			}
 		}
-		
 		return answer;
 	}
 

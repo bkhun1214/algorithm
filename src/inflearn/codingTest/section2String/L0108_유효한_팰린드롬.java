@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 예시 출력 1
  * YES
  */
-public class L0108 {
+public class L0108_유효한_팰린드롬 {
 	
 	public static String solution(String str) {
 		StringBuilder sb = new StringBuilder();
@@ -42,6 +42,14 @@ public class L0108 {
 		}
 		
 		return "YES";
+	}
+	
+	public String answer(String s){
+		String answer="NO";
+		s=s.toUpperCase().replaceAll("[^A-Z]", "");
+		String tmp=new StringBuilder(s).reverse().toString();
+		if(s.equals(tmp)) answer="YES";
+		return answer;
 	}
 	
 	public static void main(String[] args) {

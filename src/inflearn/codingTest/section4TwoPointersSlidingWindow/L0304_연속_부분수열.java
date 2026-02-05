@@ -28,7 +28,7 @@ import java.util.*;
  * 예시 출력 1
  * 3
  */
-public class L0304 {
+public class L0304_연속_부분수열 {
 	
 	public static int solution(int n, int m, int[] arr) {
 		int answer = 0;
@@ -60,15 +60,15 @@ public class L0304 {
 		return answer;
 	}
 	
-	// 강의: two pointers
-	public int answer(int n, int m, int[] arr) {
+	// two pointers
+	public int answer(int n, int m, int[] arr){
 		int answer=0, sum=0, lt=0;
-		for (int rt=0; rt<n; rt++) {
+		for(int rt=0; rt<n; rt++){
 			sum+=arr[rt];
-			if (sum==m) answer++;
-			while(sum>=m) {
+			if(sum==m) answer++;
+			while(sum>=m){
 				sum-=arr[lt++];
-				if(sum==m) answer++;
+				if(sum==m) answer++; 
 			}
 		}
 		return answer;
