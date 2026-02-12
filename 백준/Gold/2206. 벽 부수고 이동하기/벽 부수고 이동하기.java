@@ -17,10 +17,8 @@ public class Main{
 			int[] poll = q.poll();
 			
 			if (poll[0] == n-1 && poll[1] == m-1) {
-				if (answer > poll[2]) {
-					answer = poll[2];
-					continue;
-				}
+				answer = poll[2];
+				break;
 			}
 			
 			for (int i = 0; i < 4; i++) {
