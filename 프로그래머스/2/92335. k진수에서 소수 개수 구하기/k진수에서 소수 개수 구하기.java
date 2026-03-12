@@ -13,7 +13,6 @@ class Solution {
         sb = sb.reverse();
         
         List<Long> p = new ArrayList<>();
-        
         int index;
         while ((index = sb.indexOf("0")) != -1) {
         	String num = sb.substring(0, index);
