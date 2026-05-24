@@ -19,7 +19,6 @@ class Solution {
             answer.append(max);
             k -= count;
         }
-        
         while (index < number.length() && answer.length() < size) {
             answer.append(number.charAt(index));
             index++;
