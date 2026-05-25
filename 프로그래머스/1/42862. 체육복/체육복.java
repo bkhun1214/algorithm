@@ -20,7 +20,6 @@ class Solution {
         }
 
         Collections.sort(reserveList);
-
         for (int student : reserveList) {
             if (lostList.indexOf(student - 1) != -1) {
                 lostList.remove(lostList.indexOf(student - 1));
