@@ -20,7 +20,6 @@ class Solution {
                 }
                 continue;
             }
-            
             q.add(new int[]{number + (numbers[depth]), depth+1});
             q.add(new int[]{number - (numbers[depth]), depth+1});
         }
