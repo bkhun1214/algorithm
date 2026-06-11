@@ -20,7 +20,6 @@ class Solution {
         
         search("ICN", 0, tickets);
         
-        
         return travel;
     }
     
