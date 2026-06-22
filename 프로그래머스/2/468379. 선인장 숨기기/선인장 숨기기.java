@@ -14,7 +14,6 @@ class Solution {
         	arr[drops[i][0]][drops[i][1]] = i+1;
         }
         
-        
         // 가로
         for (int i = 0; i < m; i++) {
         	Deque<int[]> dq = new LinkedList<>();
