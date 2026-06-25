@@ -11,7 +11,6 @@ class Solution {
         int index = 0;
         String[] split = message.split(" ");
         
-        
         for (int i = 0; i < split.length; i++) {
         	String word = split[i];
         	int start = length;
