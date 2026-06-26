@@ -3,13 +3,12 @@ import java.util.*;
 class Solution {
     public int solution(int[][] info, int n, int m) {
 		int answer = Integer.MAX_VALUE;
-		
 		int[][] dp = new int[info.length+1][m];
 		
 		for (int i = 1; i < info.length+1; i++) {
 			Arrays.fill(dp[i], 120);
 		}
-		
+        
 		for (int i = 0; i < info.length; i++) {
 			int a = info[i][0];
 			int b = info[i][1];
