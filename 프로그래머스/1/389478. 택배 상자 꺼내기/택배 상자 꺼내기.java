@@ -13,7 +13,6 @@ class Solution {
         	
         	// (현재 층수에서 가장 큰 수 - num) * 2 + 1
         	num += ((floor * w) - num) * 2 + 1;
-        	
         	floor ++;
         }
         
