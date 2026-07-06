@@ -34,7 +34,6 @@ class Solution {
 			answer = new int[] {-1};
 		} else {
 			answer = new int[days.size()];
-			
 			days.sort(null);
 			for (int i = 0; i < days.size(); i++) {
 				answer[i] = days.get(i);
