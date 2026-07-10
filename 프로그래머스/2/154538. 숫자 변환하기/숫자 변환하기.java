@@ -26,7 +26,6 @@ class Solution {
         if (answer == Integer.MAX_VALUE) {
         	answer = -1;
         }
-        
         return answer;
     }
 }
