@@ -29,6 +29,7 @@ class Solution {
 				}
 			}
 		}
+        
 		int[] answer;
 		if (days.size() == 0) {
 			answer = new int[] {-1};
