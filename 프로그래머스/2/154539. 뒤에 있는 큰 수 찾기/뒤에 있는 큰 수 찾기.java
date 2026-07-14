@@ -8,7 +8,6 @@ class Solution {
 		Stack<int[]> stack = new Stack<>();
 		
 		for (int i = 0; i < length; i++) {
-			
 			if (stack.size() == 0) {
 				stack.push(new int[] {i, numbers[i]});
 				continue;
