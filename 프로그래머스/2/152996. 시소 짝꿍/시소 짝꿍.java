@@ -32,7 +32,6 @@ class Solution {
         		answer += map.get(i) * (map.get(i) - 1);
         	}
         }
-        
         answer = answer/2;
         
         return answer;
