@@ -76,7 +76,6 @@ class Solution {
 				}
 			}
 		}
-        
         return answer;
     }
 }
