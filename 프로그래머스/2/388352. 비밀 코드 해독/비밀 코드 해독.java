@@ -36,7 +36,6 @@ class Solution {
 					}
 				}
 			}
-
 			if (count != ans[i]) {
 				return false;
 			}
