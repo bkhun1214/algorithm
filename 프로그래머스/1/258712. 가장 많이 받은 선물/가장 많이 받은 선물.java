@@ -23,7 +23,6 @@ class Solution {
         	for (int k = 0; k < length; k++) {
         		take += giftCount[k][i];
         	}
-        	
         	point[i] = give - take;
         }
         
