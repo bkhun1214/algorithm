@@ -21,7 +21,6 @@ class Solution {
             }
 
             bill[1] = bill[1] / 2;
-
             answer ++;
         }
         
