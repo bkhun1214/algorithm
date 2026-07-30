@@ -46,7 +46,6 @@ class Solution {
         			for (int k = 0; k < m; k++) {
         				if (isAdd[k]) {
         					num[k] += count;
-        					
         					if (answer < num[k]) {
         						answer = num[k];
         					}
