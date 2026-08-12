@@ -15,6 +15,7 @@ class Solution {
             } else if (cardList2.size() > 0 && cardList2.get(0).equals(word)) {
                 cardList2.remove(0);
             } else {
+                
                 answer = "No";
                 break;
             }
