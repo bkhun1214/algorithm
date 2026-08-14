@@ -36,7 +36,6 @@ class Solution {
                 expiryMonth -= 12;
                 expiryYear += 1;
             }
-            
             // year
             if (todayYear > expiryYear) {
                 answer.add(i+1);
@@ -61,8 +60,6 @@ class Solution {
                 }
             }
         }
-        
-        
         return answer.stream().mapToInt(i -> i).toArray();
     }
 }
