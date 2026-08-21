@@ -29,6 +29,7 @@ class Solution {
         if (start != compare) {
             answer++;
         }
+        
         return answer;
     }
 }
