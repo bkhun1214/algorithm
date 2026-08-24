@@ -13,7 +13,6 @@ class Solution {
         
         for (int i = row_begin-1; i < row_end; i++) {
         	int temp = 0;
-        	
         	for (int j = 0; j < data[0].length; j++) {
         		temp += (data[i][j] % (i+1));
         	}
