@@ -19,7 +19,6 @@ class Solution {
         	} else {
         		answer += temp;
         	}
-        	
         }
         
         return answer;
