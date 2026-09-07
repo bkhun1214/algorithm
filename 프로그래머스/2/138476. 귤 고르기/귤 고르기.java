@@ -11,7 +11,6 @@ class Solution {
         }
         
         List<Integer> list = new ArrayList<>(map.keySet());
-        
         list.sort((s1, s2) -> {
         	return map.get(s2) - map.get(s1);
         });
