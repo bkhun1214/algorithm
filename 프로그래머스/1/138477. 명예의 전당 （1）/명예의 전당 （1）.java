@@ -12,7 +12,6 @@ class Solution {
             if (fame.size() > k) {
                 fame.remove(fame.size() - 1);
             }
-            
             answer[i] = fame.get(fame.size() -1);
         }
         
